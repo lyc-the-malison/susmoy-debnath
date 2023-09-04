@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Lemon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Inter:wght@300&family=Lemon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bellota:wght@300&family=Dancing+Script:wght@500&family=Inter:wght@300&family=Lemon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Bellota:wght@300&family=Dancing+Script:wght@500&family=Inter:wght@300&family=Lemon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Bellota:wght@300&family=Dancing+Script:wght@500&family=Inter:wght@300&family=Lemon&family=Quicksand&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
