@@ -28,7 +28,7 @@ export default function Contact() {
 
     if (username && email && message) {
       const res = fetch(
-        "https://susmoy-1025-default-rtdb.firebaseio.com/userDataRecords.json",
+        "https://susmoy-debnath-default-rtdb.firebaseio.com/userDataRecords.json",
         {
           method: "POST",
           headers: {

@@ -6,7 +6,7 @@ export default function Search() {
   const [show, setShow] = useState(false);
 
   return (
-    <div className="flex items-center justify-center py-4 text-sm">
+    <form className="flex items-center justify-center py-4 text-sm" action={() => setShow(true)}>
       <button className="flex relative -right-8 transform active:scale-75 transition-transform" onClick={() => setShow(true)}>
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
           <path
@@ -30,6 +30,6 @@ export default function Search() {
         </div>
         <button className="btn btn-sm text-neutral-300" onClick={() => setShow(!show)}>OK</button>
       </motion.div>}
-    </div>
+    </form>
   )
 }
