@@ -35,9 +35,9 @@ export default function Home() {
                 Susmoy
                 Debnath</p>
               <p className="mx-2 sm:mx-20 lg:mx-0 my-6 text-sm md:text-lg 2xl:text-2xl font-Inter">I am a student
-                currently studying in class 10
-                in
-                Faizur Rahman Ideal Institute in Dhaka, Bangladesh. I am a young individual with a passion for
+                currently studying in intermediate 1st year
+                at
+                Government Science College in Dhaka, Bangladesh. I am a young individual with a passion for
                 programming and ethical hacking.</p>
             </div>
           </div>

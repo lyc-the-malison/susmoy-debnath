@@ -21,9 +21,9 @@ export default function Projects() {
           <div className="flex flex-wrap -m-4">
             <motion.div className="xl:w-1/3 md:w-1/2 p-4"
               initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               transition={{
-                delay: 0.3
+                delay: 0.2
               }}
             >
               <a href=''>
@@ -39,9 +39,9 @@ export default function Projects() {
             {/* project 02 */}
             <motion.div className="xl:w-1/3 md:w-1/2 p-4"
               initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               transition={{
-                delay: 0.6
+                delay: 0.2
               }}
             >
               <a href=''>
@@ -57,9 +57,9 @@ export default function Projects() {
             {/* project 03 */}
             <motion.div className="xl:w-1/3 md:w-1/2 p-4"
               initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               transition={{
-                delay: 1.2
+                delay: 0.2
               }}
             >
               <a href=''>
@@ -75,9 +75,9 @@ export default function Projects() {
             {/* project 04 */}
             <motion.div className="xl:w-1/3 md:w-1/2 p-4"
               initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               transition={{
-                delay: 1.8
+                delay: 0.2
               }}
             >
               <a href=''>
@@ -93,9 +93,9 @@ export default function Projects() {
             {/* project 05 */}
             <motion.div className="xl:w-1/3 md:w-1/2 p-4"
               initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               transition={{
-                delay: 2.4
+                delay: 0.2
               }}
             >
               <a href=''>
@@ -111,9 +111,9 @@ export default function Projects() {
             {/* project 06 */}
             <motion.div className="xl:w-1/3 md:w-1/2 p-4"
               initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               transition={{
-                delay: 3
+                delay: 0.2
               }}
             >
               <a href=''>
@@ -128,25 +128,25 @@ export default function Projects() {
             </motion.div>
           </div>
         </div>
-        
-        {/* Alert */}
-        
-        {show && <motion.div className="alert shadow-lg bg-neutral-900/80 border-neutral-500 lg:w-1/2 fixed lg:left-1/2 top-60 lg:top-4"
-        initial={{ x: 2000 }}
-        animate={{ x: 0 }}
-        transition={{
-          delay: 5
-        }}
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-info shrink-0 w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-        <div>
-          <h3 className="font-bold text-neutral-300">Attention !</h3>
-          <div className="text-xs text-neutral-300">This page is under development. Projects will be added soon.</div>
-        </div>
-        <button className="btn btn-sm text-neutral-300" onClick={() => setShow(!show)}>OK</button>
-      </motion.div>}
 
-      </section >
+        {/* Alert */}
+
+        {show && <motion.div className="alert shadow-lg bg-neutral-900/80 border-neutral-500 lg:w-1/2 fixed lg:left-1/2 top-60 lg:top-4"
+          initial={{ x: 2000 }}
+          whileInView={{ x: 0 }}
+          transition={{
+            delay: 1
+          }}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-info shrink-0 w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <div>
+            <h3 className="font-bold text-neutral-300">Attention !</h3>
+            <div className="text-xs text-neutral-300">This page is under development. Projects will be added soon.</div>
+          </div>
+          <button className="btn btn-sm text-neutral-300" onClick={() => setShow(!show)}>OK</button>
+        </motion.div>}
+
+      </section>
 
     </>
   )
