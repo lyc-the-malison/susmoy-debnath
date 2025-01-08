@@ -28,7 +28,7 @@ export default function Me() {
                     width="88%"
                     height="88%"
                     clipPath="url(#shape)"
-                    href="https://i.postimg.cc/R07jBj8c/FB-IMG-1722088120056.jpg"
+                    href="https://i.postimg.cc/PfLj8VVJ/1000027469-Copy.jpg"
                     preserveAspectRatio="none"
                 />
                 <defs>

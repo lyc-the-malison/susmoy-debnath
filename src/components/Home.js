@@ -68,7 +68,7 @@ export default function Home() {
                 fill="#BFBFBF" />
             </svg>
           </a>
-          <a href='/contact' className="mx-2">
+          <a href='https://www.instagram.com/itzz_susmoy/' className="mx-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 144 144" fill="none">
               <path d="M124.5 63.3V49.5C124.5 33 111 19.5 94.5 19.5H49.5C33 19.5 19.5 33 19.5 49.5V58.5"
                 stroke="#BFBFBF" strokeWidth="9" strokeMiterlimit="10" strokeLinecap="round"
