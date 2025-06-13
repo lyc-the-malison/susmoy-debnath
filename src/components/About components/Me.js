@@ -28,7 +28,7 @@ export default function Me() {
                     width="88%"
                     height="88%"
                     clipPath="url(#shape)"
-                    href="https://i.postimg.cc/PfLj8VVJ/1000027469-Copy.jpg"
+                    href="https://i.postimg.cc/G2hmfZhQ/PXL-20250605-104318193-4-1-4-Copy.jpg"
                     preserveAspectRatio="none"
                 />
                 <defs>
@@ -52,7 +52,7 @@ export default function Me() {
             <div className='m-4 text-justify font-Inter flex flex-col content-center justify-center'>
                 <h1 className=' text-lg font-thin font-Quicksand'>HELLOW,</h1>
                 <p className='border-b-2 border-neutral-400 pb-1 mb-4 text-2xl font-bold'>I'M SUSMOY DEBNATH</p>
-                <p className='font-Inter'>I am a student currently studying in in intermediate 1st year
+                <p className='font-Inter'>I am a student currently studying in in intermediate 2nd year
                 at Government Science College in Dhaka, Bangladesh. I am a young individual with a passion for programming and ethical hacking. I have a keen interest in understanding how computer systems and networks work, and is determined to pursue a career in the field of technology. With a strong foundation in programming, I am well-equipped to take on any challenges that come my way. I am a hard-working and dedicated student who always strives to do his best.</p>
 
                 <p className='my-4 font-Inter'>In addition to my academic pursuits, I am also actively involved in various extracurricular activities. I have a strong desire to make a positive impact in the world through my work in technology. I am committed to using my skills and knowledge to make a difference in the lives of others and is driven to create innovative solutions to problems.</p>
@@ -61,7 +61,7 @@ export default function Me() {
                     <Link to="/Contact" className='px-8 py-2 bg-white hover:bg-transparent hover:border hover:border-white border-white border hover:text-white btn transition-all delay-100 rounded-full text-neutral-900 font-bold'>
                         Contact
                     </Link>
-                    <Link to="/" className='mx-3 md:mx-4 px-8 py-2 bg-neutral-900 hover:bg-white border-white border hover:text-neutral-900 btn transition-all delay-100 rounded-full text-white font-bold'>
+                    <Link to="https://drive.google.com/file/d/1qyfMjDzoCD-R6X-e7LdyI_BCmJeWhEai/preview" className='mx-3 md:mx-4 px-8 py-2 bg-neutral-900 hover:bg-white border-white border hover:text-neutral-900 btn transition-all delay-100 rounded-full text-white font-bold'>
                         Download CV
                     </Link>
                 </div>

@@ -35,7 +35,7 @@ export default function Home() {
                 Susmoy
                 Debnath</p>
               <p className="mx-2 sm:mx-20 lg:mx-0 my-6 text-sm md:text-lg 2xl:text-2xl font-Inter">I am a student
-                currently studying in intermediate 1st year
+                currently studying in intermediate 2nd year
                 at
                 Government Science College in Dhaka, Bangladesh. I am a young individual with a passion for
                 programming and ethical hacking.</p>
@@ -84,7 +84,7 @@ export default function Home() {
                 fill="#BFBFBF" />
             </svg>
           </a>
-          <a href='/projects' className="mx-2">
+          <a href='/contact' className="mx-2">
             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 144 144" fill="none">
               <path
                 d="M134.1 30.9C133.2 30 132 29.7 130.8 30.3L130.2 30.6C129.9 30.9 129.3 30.9 129 31.2C130.2 29.4 131.1 27.3 132 24.9C132.3 23.7 132 22.5 131.1 21.6C130.2 20.7 128.7 20.7 127.8 21.3C123 24.3 118.5 26.1 113.7 27L111 27.6C117.3 32.1 121.5 39.6 121.5 48C121.5 48.3 121.5 48.9 121.5 49.2L121.8 48.9C131.1 41.1 134.4 34.8 134.7 34.5C135.3 33.3 135 31.8 134.1 30.9Z"
