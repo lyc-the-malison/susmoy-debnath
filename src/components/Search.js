@@ -21,7 +21,7 @@ export default function Search() {
     // Custom response for specific queries about "Susmoy" or "Susmoy Debnath"
     const lowerCaseQuery = query.toLowerCase();
     if (lowerCaseQuery.includes("susmoy") || lowerCaseQuery.includes("susmoy debnath")) {
- setAnswer("Susmoy Debnath is a student of Govt. Science College and the owner of  portfolio site. You can check his info in the about section.");
+ setAnswer("Susmoy Debnath is a student of Govt. Science College and the owner of this portfolio site. You can check his info in the about section.");
       setLoading(false);
  setShow(true);
  return; // Stop further execution
