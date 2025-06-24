@@ -13,7 +13,7 @@ export default function Search() {
     e.preventDefault(); // Prevent default form submission behavior (page reload)
 
     if (!query.trim()) { // Don't search if query is empty
-      setAnswer('Please enter a query to search.');
+      setAnswer('Please enter a query to ask.');
       setShow(true);
       return;
     }
@@ -78,7 +78,7 @@ export default function Search() {
       </button>
       <input
         type="text"
-        placeholder="Search anything you want"
+        placeholder="Ask anything you want"
         className="w-5/6 lg:w-1/2 py-2 px-2 flex items-center justify-center rounded-2xl bg-neutral-700/30 text-white border border-1 border-[#494949] placeholder-[#7D7D7D] text-right sm:text-center"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
@@ -100,7 +100,7 @@ export default function Search() {
         >
           <div>
  <div className="flex justify-between items-center">
-            <h3 className="font-bold text-neutral-300">Search Results:</h3>
+            <h3 className="font-bold text-neutral-300">Results:</h3>
  <button className="text-neutral-300 hover:text-neutral-400" onClick={handleClosePopup}>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
