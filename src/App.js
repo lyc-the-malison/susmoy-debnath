@@ -1,5 +1,6 @@
 import './App.css';
 import './index.css';
+import { Analytics } from "@vercel/analytics/react"
 import Footer from './components/Footer';
 import Search from './components/Search';
 import Navbar from './components/Navbar';
@@ -23,6 +24,7 @@ function App() {
   return (
     <div className='w-full h-screen bg-no-repeat bg-gradient-to-tl from-[#0c0c0c] via-neutral-900 to-black bg-fixed flex flex-col'>
       <Search />
+      <Analytics/>
 
       <Router>
 
