@@ -42,8 +42,8 @@ export default function Search() {
       const genAI = new GoogleGenerativeAI(apiKey);
       // Ensure the model name is correct, e.g., "gemini-pro" for text.
       // If you are using a different model, ensure it's specified correctly.
-      const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash"});
-      const result = await model.generateContent(query);
+      const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash"});
+      const result = await model.generateContent(`Provide a concise answer to the following query in a polite and professional tone. If the query is irrelevant to my portfolio or general knowledge, politely state that you cannot answer. If the query is about my portfolio or me (Susmoy Debnath), answer based on the information available on the site or general knowledge about me as the site owner. Format the answer using Markdown where appropriate, especially for lists or code snippets: ${query}`);
       const response = await result.response;
       const text = response.text();
       setAnswer(text);
