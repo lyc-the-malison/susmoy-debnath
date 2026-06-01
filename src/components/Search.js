@@ -31,16 +31,39 @@ export default function Search() {
 
     try {
       const genAI = new GoogleGenerativeAI(apiKey);
-      // Ensure the model name is correct, e.g., "gemini-pro" for text.
-      // If you are using a different model, ensure it's specified correctly.
       const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash"});
-      const result = await model.generateContent(`Provide a concise answer to the following query in a polite and professional tone. If the query is irrelevant to my portfolio or general knowledge, politely state that you cannot answer. If the query is about my portfolio or me (Susmoy Debnath), answer based on the information available on the site or general knowledge about me as the site owner. Format the answer using Markdown where appropriate, especially for lists or code snippets: ${query}`);
+      
+      // Strict Context Prompt for Susmoy's Portfolio
+      const promptContext = `
+        You are a strict, specialized AI assistant embedded in Susmoy Debnath's personal portfolio website. 
+        Your ONLY purpose is to answer questions directly related to Susmoy Debnath and his portfolio based on the verified facts below.
+
+        [VERIFIED FACTS ABOUT SUSMOY DEBNATH]:
+        - Name: Susmoy Debnath
+        - Education: Class 12 student at Govt. Science College, Dhaka.
+        - Academic Goal: Engineering aspirant, strongly targeting BUET admission.
+        - Core Skills: Web Developer using React JS, Vercel, Firebase, Tailwind CSS, Figma, Kali Linux, Video Editing, Photoshop, Digital Art.
+        - Hardware/Robotics Interests: Passionate about robotics hardware, microcontrollers (specifically ESP32 and Arduino).
+        - Achievements:
+          * Secured 3rd Runner Up position in the Robo Olympiad segment at BUET Robo Carnival 2026.
+          * Achieved a perfect score in the QuizHunt 5.0 IQ Quiz.
+        - School is Shahed Babul Academy and High School is Faizur Rahman Ideal Institute
+
+        [STRICT INSTRUCTIONS]:
+        1. IF the user's query is about Susmoy, his skills, education, college, or achievements, answer professionally and concisely using the verified facts above. Format with Markdown where appropriate.
+        2. IF the user's query is OUT OF CONTEXT (e.g., general knowledge, coding help, math, recipes, or anything not directly about Susmoy), you MUST politely refuse to answer. State that you are only configured to answer portfolio or personal queries about Susmoy Debnath.
+        3. Do not make up any facts outside of what is provided above.
+        4. Don't include his buet goal in every reply, add it only where is need.
+
+        User Query: ${query}
+      `;
+
+      const result = await model.generateContent(promptContext);
       const response = await result.response;
       const text = response.text();
       setAnswer(text);
     } catch (error) {
       console.error("Error fetching from Gemini API:", error);
-      // Provide more detailed error for debugging in development
       const errorMessage = `Sorry, I couldn't fetch an answer at this time. Error: ${error.message || error}`;
       setAnswer(errorMessage);
     } finally {
@@ -50,14 +73,10 @@ export default function Search() {
 
   const handleClosePopup = () => {
     setShow(false);
-    // Optionally, clear the answer when closing the popup
-    // setAnswer('');
   };
 
   return (
     <form className="flex items-center justify-center py-4 text-sm" onSubmit={handleSearch}>
-      {/* The search icon button will no longer trigger the popup directly,
-          as the form submission will handle showing it after a search. */}
       <button type="submit" className="flex relative -right-8 transform active:scale-75 transition-transform">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
           <path
@@ -73,10 +92,9 @@ export default function Search() {
         className="w-5/6 lg:w-1/2 py-2 px-2 flex items-center justify-center rounded-2xl bg-neutral-700/30 text-white border border-1 border-[#494949] placeholder-[#7D7D7D] text-right sm:text-center"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        disabled={loading} // Disable input while loading
+        disabled={loading}
       />
 
-      {/* Overlay for blur effect when popup is shown */}
       {show && (
         <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-filter backdrop-blur-sm z-40" onClick={handleClosePopup}></div>
       )}
@@ -86,7 +104,6 @@ export default function Search() {
           className="alert shadow-lg bg-neutral-900/80 border-neutral-500 lg:w-1/2 fixed inset-0 m-auto w-fit h-fit z-50 min-h-[150px] flex-col"
           initial={{ x: 2000 }}
           animate={{ x: 0 }}
-          // Added a key to force re-render/re-animation if content changes, useful for quick successive searches
           key={answer || 'loading'}
         >
           <div>
@@ -98,15 +115,15 @@ export default function Search() {
                 </svg>
               </button>
             </div>
-            <div className="text-xs text-neutral-300 mt-2 overflow-y-auto max-h-[calc(100vh-200px)]"> {/* Added max-height and overflow for scrollability */}
-              {loading ? ( // text-left ensures left alignment across all screen sizes
+            <div className="text-xs text-neutral-300 mt-2 overflow-y-auto max-h-[calc(100vh-200px)]">
+              {loading ? (
                 'Loading...'
               ) : answer ? (
                 <ReactMarkdown>
                   {answer}
-                </ReactMarkdown> // Render markdown
+                </ReactMarkdown>
               ) : (
-                'Enter your query to search.' // Fallback if no answer yet
+                'Enter your query to search.'
               )}
             </div>
           </div>
