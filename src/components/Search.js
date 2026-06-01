@@ -18,15 +18,6 @@ export default function Search() {
       return;
     }
 
-    // Custom response for specific queries about "Susmoy" or "Susmoy Debnath"
-    const lowerCaseQuery = query.toLowerCase();
-    if (lowerCaseQuery.includes("susmoy") || lowerCaseQuery.includes("susmoy debnath")) {
- setAnswer("Susmoy Debnath is a student of Govt. Science College and the owner of this portfolio site. You can check his info in the about section.");
-      setLoading(false);
- setShow(true);
- return; // Stop further execution
-    }
-
     setLoading(true);
     setShow(true); // Show the popup
     setAnswer(''); // Clear previous answer
@@ -85,10 +76,10 @@ export default function Search() {
         disabled={loading} // Disable input while loading
       />
 
- {/* Overlay for blur effect when popup is shown */}
- {show && (
- <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-filter backdrop-blur-sm z-40" onClick={handleClosePopup}></div>
- )}
+      {/* Overlay for blur effect when popup is shown */}
+      {show && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-filter backdrop-blur-sm z-40" onClick={handleClosePopup}></div>
+      )}
 
       {show && (
         <motion.div
@@ -99,21 +90,21 @@ export default function Search() {
           key={answer || 'loading'}
         >
           <div>
- <div className="flex justify-between items-center">
-            <h3 className="font-bold text-neutral-300">Results:</h3>
- <button className="text-neutral-300 hover:text-neutral-400" onClick={handleClosePopup}>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
- <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
- </svg>
- </button>
- </div>
- <div className="text-xs text-neutral-300 mt-2 overflow-y-auto max-h-[calc(100vh-200px)]"> {/* Added max-height and overflow for scrollability */}
+            <div className="flex justify-between items-center">
+              <h3 className="font-bold text-neutral-300">Results:</h3>
+              <button className="text-neutral-300 hover:text-neutral-400" onClick={handleClosePopup}>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div className="text-xs text-neutral-300 mt-2 overflow-y-auto max-h-[calc(100vh-200px)]"> {/* Added max-height and overflow for scrollability */}
               {loading ? ( // text-left ensures left alignment across all screen sizes
                 'Loading...'
               ) : answer ? (
- <ReactMarkdown>
- {answer}
- </ReactMarkdown> // Render markdown
+                <ReactMarkdown>
+                  {answer}
+                </ReactMarkdown> // Render markdown
               ) : (
                 'Enter your query to search.' // Fallback if no answer yet
               )}
