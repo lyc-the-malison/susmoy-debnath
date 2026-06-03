@@ -43,6 +43,7 @@ export default function Search() {
 
       Rules:
       1. Concise answer in Markdown.
+      2. If the user asks ANY general question, coding help, educational query, or out-of-context topic, do NOT refuse. Answer it beautifully, correctly, and concisely using your general knowledge.
 
         User Query: ${query}
       `;
